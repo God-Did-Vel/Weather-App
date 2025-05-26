@@ -1,0 +1,148 @@
+/* Color & size tokens */
+:root {
+  --primary: #0066ff;
+  --bg: white;
+  --card-bg: #ffffff;
+  --text: #04610b;
+  --error: #e74c3c;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.5rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Search bar */
+.search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.search button {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search button:hover {
+  background: #0052cc;
+}
+
+/* States */
+.info,
+.error {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.error {
+  color: var(--error);
+}
+
+/* Weather card */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.city {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details img {
+  width: 120px;
+  height: 120px;
+}
+
+.metrics {
+  margin-top: 1rem;
+}
+
+.temp {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.desc {
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Responsive tweak */
+@media (min-width: 480px) {
+  .app {
+    max-width: 500px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
